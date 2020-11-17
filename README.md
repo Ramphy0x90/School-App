@@ -5,7 +5,7 @@ Final project M335
 ## Installation
 
 ```bash
-npm ...
+npm install -g @ionic/cli
 ```
 
 ## Usage
