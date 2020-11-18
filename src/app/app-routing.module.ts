@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {LoginComponent} from './container/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login'},
-  { path: 'grades', children: [
+  { path: 'login', component: LoginComponent},
+  /*{ path: 'grades', children: [
       { path: 'detail/:id'}
     ]},
   { path: 'subject', children: [
@@ -12,7 +13,7 @@ const routes: Routes = [
       { path: 'new'}
     ]},
   { path: 'homework'},
-  { path: 'school'}
+  { path: 'school'}*/
 ];
 
 @NgModule({
