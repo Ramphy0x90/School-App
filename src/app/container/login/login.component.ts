@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
+import {FingerprintComponent} from '../../component/fingerprint/fingerprint.component';
+import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
+
 import {AlertComponent} from '../../component/alert/alert.component';
 import {ToastController} from '@ionic/angular';
 
@@ -20,6 +23,7 @@ export class LoginComponent implements OnInit {
         const test: Test = new Test(sqlite);
 
         test.test();*/
+        new FingerprintComponent(new FingerprintAIO());
     }
 
     ngOnInit() {}
