@@ -17,4 +17,12 @@ ion-segment-button ion-icon{
 
 ion-segment-button{
   padding: 1px !important;
+  --indicator-box-shadow: transparent!important;
+  --background: transparent !important;
+  --indicator-color : transparent!important;
+}
+
+.currentTab{
+  background: #fc5d20;
+  transition: background-color 0.5s;
 }
