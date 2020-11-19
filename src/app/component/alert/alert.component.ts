@@ -15,6 +15,9 @@ export class AlertComponent{
   async presentToast() {
     const toast = await this.toastController.create({
       message: this.message,
+      duration: 2000,
+      color: this.type,
+      mode: "ios",
       cssClass: "alertComponent"
     });
     await toast.present();

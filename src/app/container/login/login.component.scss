@@ -3,6 +3,7 @@ $formWidth: 70%;
 
 *{
   color: $fontColor !important;
+  --placeholder-color: $fontColor !important;
 }
 
 .loginInput{
@@ -16,7 +17,8 @@ $formWidth: 70%;
   -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
   border-radius: 60px;
-  --placeholder-color: $fontColor !important;
+  text-indent: 10px;
+  font-size: 0.8em;
 }
 
 .loginButton{
@@ -45,4 +47,8 @@ $formWidth: 70%;
   top: 64%;
   left: 50%;
   transform: translate(-50%, -70%);
+}
+
+#container ion-img{
+  transform: scale(1.2);
 }
