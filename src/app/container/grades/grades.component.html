@@ -4,14 +4,17 @@
   </ion-title>
 </ion-header>
 
-
 <ion-content>
-  <div>
-    Media totale: <span>{{ getTotalAverage() }}</span>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Media totale: {{ getTotalAverage() }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
   <div *ngFor="let subject of subjects">
     <a routerLink="/detail/{{subject.id}}">
       <app-subject-avg [average]="getAverage(subject.id)" [subject]="subject"></app-subject-avg>
     </a>
   </div>
 </ion-content>
+
