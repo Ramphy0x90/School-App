@@ -16,8 +16,9 @@ export class DatabaseService {
   public getSubjectAverage(id) {
     let grades = GRADES.filter(g => g.subjectRed == id);
     let sum = 0;
-    grades.forEach(g => sum += g.mark*g.score);
-    return sum/grades.length;
+    let test = 0;
+    grades.forEach(g => {sum += g.mark*g.score; test += g.score});
+    return sum/test;
   }
 
   getSubjectMark(id){
