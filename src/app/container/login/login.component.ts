@@ -25,9 +25,16 @@ export class LoginComponent implements OnInit {
 
     constructor(private router: Router) {
         new FingerprintComponent(new FingerprintAIO());
+
+        if(!this.checkPasswordExists())
+            this.buttonText = 'Create password';
     }
 
     ngOnInit() {}
+
+    checkPasswordExists(){
+        return this.currentPassword != '';
+    }
 
     setPassword() {
         this.currentPassword = this.passwordIn;
@@ -36,7 +43,7 @@ export class LoginComponent implements OnInit {
     }
 
     checkPassword() {
-        if(this.currentPassword != '') {
+        if(this.checkPasswordExists()) {
             if (this.currentPassword == this.passwordIn) {
                 new AlertComponent(this.toastCtrl, "success", "Welcome to SchoolApp");
                 this.router.navigate(['/grades']).then(r => {})
