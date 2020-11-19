@@ -22,10 +22,6 @@ export class LoginComponent implements OnInit {
     public passwordIn: number | string;
 
     constructor() {
-        /*const sqlite = new SQLite();
-        const test: Test = new Test(sqlite);
-
-        test.test();*/
         new FingerprintComponent(new FingerprintAIO());
     }
 
