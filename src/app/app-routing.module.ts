@@ -9,12 +9,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'grades', component: GradesComponent},
   { path: 'detail/:id', component: SubjectDetailComponent},
-  { path: 'subject', children: [
+  /*{ path: 'subject', children: [
       { path: 'modify/:id'},
       { path: 'new'}
     ]},
   { path: 'homework'},
-  { path: 'school'}
+  { path: 'school'}*/
 ];
 
 @NgModule({
