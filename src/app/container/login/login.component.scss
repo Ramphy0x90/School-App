@@ -1,11 +1,6 @@
 $fontColor: #455073;
 $formWidth: 70%;
 
-*{
-  color: $fontColor !important;
-  --placeholder-color: $fontColor !important;
-}
-
 .loginInput{
   width: $formWidth;
   max-width: 300px;
