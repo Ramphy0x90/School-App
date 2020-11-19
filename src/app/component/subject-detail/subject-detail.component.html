@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-title>
+        <span (click)="goBack()"><ion-icon name="chevron-back-outline"></ion-icon> {{ subject.name | uppercase }}</span>
+    </ion-title>
+</ion-header>
+<ion-content>
+    <div class="{{ class }}">
+        {{ average }}
+    </div>
+    <div *ngFor="let grade of grades">
+        {{ grade.dayDate | date: 'dd.MM.yyyy' }} - {{ grade.mark }}
+    </div>
+    <div>
+        <h5>Aggiungi una nuova nota <ion-icon name="add-circle-outline"></ion-icon></h5>
+        <ion-input placeholder="Nota" [(ngModel)]="newGrade.mark"></ion-input>
+        <ion-input placeholder="Valore" [(ngModel)]="newGrade.score"></ion-input>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newGrade.dayDate"></ion-datetime>
+        <ion-button (click)="add()">Aggiungi</ion-button>
+    </div>
+</ion-content>
