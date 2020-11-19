@@ -13,7 +13,7 @@ import {FormsModule} from "@angular/forms";
         CommonModule,
         IonicModule,
         RouterModule,
-        FormsModule
+        FormsModule,
     ]
 })
 export class GradesModule { }

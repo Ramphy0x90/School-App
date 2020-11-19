@@ -33,6 +33,26 @@ $formWidth: 70%;
   --placeholder-color: $fontColor !important;
 }
 
-ion-content{
+ion-content, ion-tabs, ion-item, ion-label{
   --background: #F1F0EE !important;
+}
+
+ion-header, ion-title{
+  background: $fontColor !important;
+  color: #F1F0EE !important;
+  height: 60px !important;
+  text-align: left !important;
+}
+
+ion-title{
+  padding: 20px 5px 0 25px !important;
+}
+
+ion-title span, ion-title ion-icon{
+  color: #F1F0EE !important;
+}
+
+ion-card-title{
+  color: #f1f0ee !important;
+  font-size: 1.5em;
 }
