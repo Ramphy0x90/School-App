@@ -1,23 +1,6 @@
-<ion-tabs>
-    <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="/">
-            <ion-icon name="bar-chart-outline"></ion-icon>
-            <ion-label>Grades</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="../login">
-            <ion-icon name="library-outline"></ion-icon>
-            <ion-label>Subjects</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="map">
-            <ion-icon name="journal-outline"></ion-icon>
-            <ion-label>Homeworks</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="about">
-            <ion-icon name="information-circle"></ion-icon>
-            <ion-label>About</ion-label>
-        </ion-tab-button>
-    </ion-tab-bar>
-</ion-tabs>
+<ion-segment mode="ios" (ionChange)="test($event)">
+    <ion-segment-button [routerLink]="tab.path" [value]="i" *ngFor="let tab of tabs; let i = index" [ngClass]="{'currentTab' : i == currentTab}">
+        <ion-icon [name]="tab.icon"></ion-icon>
+        <ion-label>{{tab.name}}</ion-label>
+    </ion-segment-button>
+</ion-segment>
