@@ -8,6 +8,13 @@ Final project M335
 npm install -g @ionic/cli
 ```
 
+## Components
+#### Datepicker
+```
+ionic cordova plugin add cordova-plugin-datepicker
+npm install --save @ionic-native/date-picker@4
+```
+
 ## Usage
 
 
