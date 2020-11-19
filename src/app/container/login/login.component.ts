@@ -7,6 +7,8 @@ import {AlertComponent} from '../../component/alert/alert.component';
 import {ToastController} from '@ionic/angular';
 import {Credential} from '../../mock/credential';
 
+import { Router } from '@angular/router';
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
     public buttonText: string = 'Login';
     public passwordIn: number | string;
 
-    constructor() {
+    constructor(private router: Router) {
         new FingerprintComponent(new FingerprintAIO());
     }
 
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
         if(this.currentPassword != '') {
             if (this.currentPassword == this.passwordIn) {
                 new AlertComponent(this.toastCtrl, "success", "Welcome to SchoolApp");
+                this.router.navigate(['/grades']).then(r => {})
             } else {
                 new AlertComponent(this.toastCtrl, "danger", "Wrong password");
             }
