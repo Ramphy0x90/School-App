@@ -1,12 +1,20 @@
-*{
+ion-segment{
+  position: absolute !important;
+  bottom: 0 !important;
+  background: #455073 !important;
+  padding: 6px !important;
+}
+
+ion-segment-button ion-label{
   color: #F1F0EE !important;
+  font-size: 1em !important;
 }
 
-ion-tab-bar, ion-tab-button{
-  --background: #455073 !important;
-  border: transparent;
+ion-segment-button ion-icon{
+  color: #F1F0EE !important;
+  font-size: 1.5em !important;
 }
 
-ion-icon{
-  font-size: 20px;
+ion-segment-button{
+  padding: 1px !important;
 }
