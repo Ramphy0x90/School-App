@@ -24,9 +24,6 @@ export let HOMEWORKS: Homework[] = [
     { id: 1, dayDate: new newDate().setDate(2020, 11, 28), title: 'Verifica', description: 'Lorem ipsum', subjectRef: 1},
     { id: 2, dayDate: new newDate().setDate(2020, 11, 27), title: 'Finire ricerca', description: 'Lorem ipsum', subjectRef: 2},
     { id: 3, dayDate: new newDate().setDate(2020, 11, 26), title: 'Portare gomma', description: 'Lorem ipsum', subjectRef: 3},
-    { id: 4, dayDate: new newDate().setDate(2020, 11, 26), title: 'Portare gomma', description: 'Lorem ipsum', subjectRef: 3},
-    { id: 5, dayDate: new newDate().setDate(2020, 11, 26), title: 'Portare gomma', description: 'Lorem ipsum', subjectRef: 3},
-    { id: 6, dayDate: new newDate().setDate(2020, 11, 27), title: 'Finire ricerca', description: 'Lorem ipsum', subjectRef: 2},
 ];
 
 

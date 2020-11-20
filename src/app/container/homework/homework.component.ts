@@ -22,6 +22,5 @@ export class HomeworkComponent implements OnInit {
   }
 
   openModal(){
-    console.log("sdsdfsdfsdf");
   }
 }
