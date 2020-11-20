@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
     },
     {
       name: "Homework",
-      path: "/homework",
+      path: "/homeworks",
       icon: "journal-outline"
     },
     {

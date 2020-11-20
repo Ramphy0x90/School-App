@@ -20,4 +20,8 @@ export class HomeworkComponent implements OnInit {
   getData() {
     this.homeworks = this.databaseService.getHomeworks();
   }
+
+  openModal(){
+    
+  }
 }
