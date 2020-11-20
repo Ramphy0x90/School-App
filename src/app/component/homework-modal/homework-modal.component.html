@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-title>
+    {{ exist ? 'Modifica' : 'Crea' }}
+    <ion-label class="header-link" (click)="dismiss()">Fine</ion-label>
+  </ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Titolo</ion-label>
+    <ion-input placeholder="Titolo" [(ngModel)]="homework.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime [(ngModel)]="homework.dayDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Materia</ion-label>
+    <ion-select value="subjects.id == selectedSubject.id">
+      <ion-select-option *ngFor="let subject of subjects" [(ngModel)]="selectedSubject" ngDefaultControl>
+        {{ subject.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descrizione</ion-label>
+    <ion-textarea [(ngModel)]="homework.description"></ion-textarea>
+  </ion-item>
+</ion-content>

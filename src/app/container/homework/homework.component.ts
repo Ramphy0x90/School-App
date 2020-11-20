@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DatabaseService} from "../../service/database.service";
 import {Homework} from "../../mock/homework";
+import {ModalController} from "@ionic/angular";
+import {HomeworkModalComponent} from "../../component/homework-modal/homework-modal.component";
 
 @Component({
   selector: 'app-homework',
@@ -9,9 +11,11 @@ import {Homework} from "../../mock/homework";
 })
 export class HomeworkComponent implements OnInit {
 
+  newHomework: Homework = new Homework();
+
   homeworks: Homework[];
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.getData();
@@ -21,6 +25,16 @@ export class HomeworkComponent implements OnInit {
     this.homeworks = this.databaseService.getHomeworks();
   }
 
-  openModal(){
+  public async presentModal(exist, homework) {
+    const modal = await this.modalController.create({
+      component: HomeworkModalComponent,
+      cssClass: 'modal',
+      componentProps: {
+        'exist': exist,
+        'homework': homework
+      }
+    });
+
+    await modal.present();
   }
 }

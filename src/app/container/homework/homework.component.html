@@ -1,14 +1,14 @@
 <ion-header>
   <ion-title>
     Homeworks
-    <ion-icon name="add-outline" (click)="openModal()"></ion-icon>
+    <ion-icon name="add-outline" (click)="presentModal(false, newHomework)"></ion-icon>
   </ion-title>
 </ion-header>
 
 <ion-content>
     <ion-list mode="ios">
       <ion-item *ngFor="let homework of homeworks">
-        <app-homework-detail [homework]="homework"></app-homework-detail>
+        <app-homework-detail [homework]="homework" (click)="presentModal(true, homework)"></app-homework-detail>
       </ion-item>
     </ion-list>
 </ion-content>
