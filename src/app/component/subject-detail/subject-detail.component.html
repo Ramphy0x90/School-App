@@ -11,19 +11,30 @@
         </ion-card-header>
     </ion-card>
 
-    <div *ngFor="let grade of grades">
-        <ion-item>
-            <ion-label>{{ grade.dayDate | date: 'dd.MM.yyyy' }} - {{ grade.mark }}</ion-label>
-        </ion-item>
-    </div>
+    <ion-card mode="ios">
+        <ion-list *ngFor="let grade of grades">
+            <ion-item>
+                <ion-label>{{ grade.dayDate | date: 'dd.MM.yyyy' }} - {{ grade.mark }}</ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 
     <div>
         <h5>Aggiungi una nuova nota
             <ion-icon name="add-circle-outline"></ion-icon>
         </h5>
-        <ion-input placeholder="Nota" [(ngModel)]="newGrade.mark"></ion-input>
-        <ion-input placeholder="Valore" [(ngModel)]="newGrade.score"></ion-input>
-        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newGrade.dayDate"></ion-datetime>
+        <ion-item>
+            <ion-label position="floating">Nota</ion-label>
+            <ion-input [(ngModel)]="newGrade.mark"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Valore</ion-label>
+            <ion-input [(ngModel)]="newGrade.score"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Data</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newGrade.dayDate"></ion-datetime>
+        </ion-item>
         <ion-button (click)="add()">Aggiungi</ion-button>
     </div>
 </ion-content>
