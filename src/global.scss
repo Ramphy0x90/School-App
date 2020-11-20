@@ -33,7 +33,7 @@ $formWidth: 70%;
   --placeholder-color: $fontColor !important;
 }
 
-ion-content, ion-tabs, ion-item, ion-label{
+ion-content, ion-tabs, ion-item, ion-label, ion-datetime{
   --background: #F1F0EE !important;
 }
 
@@ -55,4 +55,39 @@ ion-title span, ion-title ion-icon{
 ion-card-title{
   color: #f1f0ee !important;
   font-size: 1.5em;
+}
+
+.picker-wrapper.sc-ion-picker-ios {
+  background: #F1F0EE !important;
+  --background: #F1F0EE !important;
+  box-shadow: 0 0 0 0 #F1F0EE !important;
+}
+
+.picker-ios .picker-prefix,
+.picker-ios .picker-suffix,
+.picker-ios .picker-opt.picker-opt-selected {
+  box-shadow: 0 0 0 0 #F1F0EE !important;
+}
+
+.picker-ios .picker-button,
+.picker-ios .picker-button.activated {
+  --background: #F1F0EE !important;
+  background: #F1F0EE !important;
+  box-shadow: 0 0 0 0 #F1F0EE !important;
+}
+
+.picker-toolbar.sc-ion-picker-ios {
+  background: #F1F0EE !important;
+  border-bottom: 0px solid transparent;
+  border-top: $fontColor !important;
+  box-shadow: 0 0 0 0 #F1F0EE !important;
+}
+
+.picker-above-highlight.sc-ion-picker-ios{
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.15) 0%, rgba(255,255,255,0) 100%);
+}
+.picker-below-highlight.sc-ion-picker-ios{
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(255,255,255,0) 100%);
 }
