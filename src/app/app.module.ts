@@ -12,11 +12,12 @@ import {MenuComponent} from './component/menu/menu.component';
 import {LoginModule} from "./container/login/login.module";
 import {CommonModule} from "@angular/common";
 import {HomeworkModule} from "./container/homework/homework.module";
+import {SubjectModule} from './container/subject/subject.module';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule, SubjectModule],
   providers: [
     StatusBar,
     SplashScreen,

@@ -4,6 +4,7 @@ import {GradesComponent} from "./container/grades/grades.component";
 import {SubjectDetailComponent} from "./component/subject-detail/subject-detail.component";
 import {LoginComponent} from './container/login/login.component';
 import {HomeworkComponent} from "./container/homework/homework.component";
+import {SubjectComponent} from './container/subject/subject.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'grades', component: GradesComponent},
   { path: 'detail/:id', component: SubjectDetailComponent},
   { path: 'homeworks', component: HomeworkComponent },
+  { path: 'subject', component: SubjectComponent}
   /*{ path: 'subject', children: [
       { path: 'modify/:id'},
       { path: 'new'}
