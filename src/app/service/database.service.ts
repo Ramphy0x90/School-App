@@ -49,11 +49,8 @@ export class DatabaseService {
   }
 
   public insertHomework(homework: Homework){
-    console.log(homework);
     homework.id = HOMEWORKS.length > 0 ? HOMEWORKS[HOMEWORKS.length-1].id + 1 : 0;
-    console.log(homework);
     HOMEWORKS.push(homework);
-    console.log(HOMEWORKS);
   }
 
   public updateHomework(homework: Homework){

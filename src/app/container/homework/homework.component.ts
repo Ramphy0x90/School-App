@@ -25,7 +25,7 @@ export class HomeworkComponent implements OnInit {
     this.homeworks = this.databaseService.getHomeworks();
   }
 
-  async presentModal(exist, homework) {
+  public async presentModal(exist, homework) {
     const modal = await this.modalController.create({
       component: HomeworkModalComponent,
       cssClass: 'modal',
@@ -35,9 +35,6 @@ export class HomeworkComponent implements OnInit {
       }
     });
 
-    if (await modal.onDidDismiss){
-      this.getData();
-    }
-    return await modal.present();
+    await modal.present();
   }
 }

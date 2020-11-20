@@ -29,19 +29,20 @@ export class HomeworkModalComponent implements OnInit {
     console.log(this.homework);
   }
 
-  insertData(){
-    if (this.exist){
-      this.databaseService.updateHomework(this.homework);
+
+  insertData(exist, homework){
+    if (exist){
+      this.databaseService.updateHomework(homework);
     } else {
-      this.databaseService.insertHomework(this.homework);
+      this.databaseService.insertHomework(homework);
     }
   }
 
   dismiss(){
-    this.insertData();
-    this.homework = new Homework();
+    this.insertData(this.exist, this.homework);
     this.modalController.dismiss({
       'dismissed': true
     });
+    this.homework = new Homework();
   }
 }
