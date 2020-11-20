@@ -37,6 +37,10 @@ ion-content, ion-tabs, ion-item, ion-label, ion-datetime{
   --background: #F1F0EE !important;
 }
 
+ion-content{
+  --offset-bottom: -55px !important;
+}
+
 ion-header, ion-title{
   background: $fontColor !important;
   color: #F1F0EE !important;
