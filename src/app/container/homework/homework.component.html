@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
+    <ion-list mode="ios">
       <ion-item *ngFor="let homework of homeworks">
         <app-homework-detail [homework]="homework"></app-homework-detail>
       </ion-item>
