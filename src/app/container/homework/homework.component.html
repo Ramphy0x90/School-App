@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          Homeworks
+        </ion-col>
+        <ion-col push="4">
+          <ion-icon name="add-outline" (click)="openModal()"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-title>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item *ngFor="let homework of homeworks">
+        <app-homework-detail [homework]="homework"></app-homework-detail>
+      </ion-item>
+    </ion-list>
+</ion-content>

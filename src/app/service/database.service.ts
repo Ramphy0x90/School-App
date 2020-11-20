@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SUBJECTS, Subject } from "../mock/subject";
 import { GRADES, Grade } from "../mock/grade";
+import {HOMEWORKS} from "../mock/homework";
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +41,9 @@ export class DatabaseService {
 
   insertGrade(grade: Grade){
     GRADES.push(grade);
+  }
+
+  getHomeworks(){
+    return HOMEWORKS.filter(h => h.dayDate >= new Date())
   }
 }

@@ -9,11 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {GradesModule} from "./container/grades/grades.module";
 import { FormsModule } from '@angular/forms';
 import {MenuComponent} from './component/menu/menu.component';
+import {LoginModule} from "./container/login/login.module";
+import {CommonModule} from "@angular/common";
+import {HomeworkModule} from "./container/homework/homework.module";
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule],
   providers: [
     StatusBar,
     SplashScreen,
