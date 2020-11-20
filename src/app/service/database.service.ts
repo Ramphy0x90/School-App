@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SUBJECTS, Subject } from "../mock/subject";
 import { GRADES, Grade } from "../mock/grade";
-import {HOMEWORKS} from "../mock/homework";
+import {Homework, HOMEWORKS} from "../mock/homework";
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,10 @@ export class DatabaseService {
     return sum/test;
   }
 
-  getSubjectMark(id){
+  public getSubjectMark(id){
     return GRADES.filter(g => g.subjectRed == id);
   }
-  getAllAverage() {
+  public getAllAverage() {
     let sum = 0;
     for (let i = 0; i < SUBJECTS.length; i++) {
       sum += this.getSubjectAverage(SUBJECTS[i].id);
@@ -34,16 +34,33 @@ export class DatabaseService {
     return sum/SUBJECTS.length;
   }
 
-  getSubject(id){
+  public getSubject(id){
     return SUBJECTS.filter(s => s.id == id)[0];
 
   }
 
-  insertGrade(grade: Grade){
+  public insertGrade(grade: Grade){
+    grade.id = GRADES.length > 0 ? GRADES[GRADES.length-1].id + 1 : 0;
     GRADES.push(grade);
   }
 
-  getHomeworks(){
+  public getHomeworks(){
     return HOMEWORKS.filter(h => h.dayDate >= new Date())
+  }
+
+  public insertHomework(homework: Homework){
+    console.log(homework);
+    homework.id = HOMEWORKS.length > 0 ? HOMEWORKS[HOMEWORKS.length-1].id + 1 : 0;
+    console.log(homework);
+    HOMEWORKS.push(homework);
+    console.log(HOMEWORKS);
+  }
+
+  public updateHomework(homework: Homework){
+    let current = HOMEWORKS.filter(h => h.id == homework.id)[0];
+    current.title = homework.title;
+    current.description = homework.description;
+    current.subjectRef = homework.subjectRef;
+    current.dayDate = homework.dayDate;
   }
 }
