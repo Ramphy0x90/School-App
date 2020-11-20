@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
     private toastCtrl = new ToastController();
 
-    private currentPassword: number | string = Credential.password
+    private currentPassword: number | string = Credential.password;
 
     public buttonText: string = 'Login';
     public passwordIn: number | string;
