@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import {LoginComponent} from "./login.component";
 import {AlertComponent} from "../../component/alert/alert.component";
 import {FingerprintComponent} from "../../component/fingerprint/fingerprint.component";
-import {FormsModule} from "@angular/forms";
-
+import {IonicModule} from '@ionic/angular';
 
 
 @NgModule({
   declarations: [ LoginComponent, AlertComponent, FingerprintComponent],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        IonicModule
+    ]
 })
 export class LoginModule { }

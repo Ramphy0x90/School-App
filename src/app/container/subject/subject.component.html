@@ -1,14 +1,19 @@
 <ion-header class="padding">
   <ion-title>
     Subjects
-    <ion-icon name="add-outline" (click)="openModal()"></ion-icon>
+    <ion-icon *ngIf="!onEdit" name="create-outline" (click)="changeStatus()"></ion-icon>
+    <ion-label *ngIf="onEdit" class="header-link" (click)="changeStatus()">Fine</ion-label>
+    <ion-icon *ngIf="onEdit" name="add-outline" (click)="presentModal()"></ion-icon>
   </ion-title>
 </ion-header>
 
 <ion-content>
   <ion-list mode="ios">
-    <ion-item *ngFor="let subject of subjects">
-      {{subject.name}}
+    <ion-item *ngFor="let subject of subjects; let i = index">
+      <ion-label>
+        {{subject.name}}
+        <ion-icon *ngIf="onEdit" name="close-outline" class="subject-icon-delete" (click)="deleteSubject(i)"></ion-icon>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

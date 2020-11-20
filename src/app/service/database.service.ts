@@ -34,9 +34,18 @@ export class DatabaseService {
     return sum/SUBJECTS.length;
   }
 
+  public insertSubject(subject: Subject){
+    subject.id = SUBJECTS.length > 0 ? SUBJECTS[SUBJECTS.length-1].id + 1 : 0;
+    console.log(subject);
+    SUBJECTS.push(subject);
+  }
+
   public getSubject(id){
     return SUBJECTS.filter(s => s.id == id)[0];
+  }
 
+  public deleteSubject(id){
+    SUBJECTS.splice(id, 1);
   }
 
   public insertGrade(grade: Grade){
