@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         if(this.checkPasswordExists()) {
             if (this.currentPassword == this.passwordIn) {
                 new AlertComponent(this.toastCtrl, "success", "Welcome to SchoolApp");
-                this.router.navigate(['/grades']).then(r => {})
+                this.router.navigate(['/homeworks']).then(r => {})
             } else {
                 new AlertComponent(this.toastCtrl, "danger", "Wrong password");
             }
