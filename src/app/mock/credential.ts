@@ -1,3 +1,3 @@
-export class Credential{
-    static password: number | string = '';
+export class Credential {
+    static PASSWORD: string;
 }

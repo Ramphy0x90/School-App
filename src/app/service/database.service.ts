@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SUBJECTS, Subject } from "../mock/subject";
 import { GRADES, Grade } from "../mock/grade";
-import {Homework, HOMEWORKS} from "../mock/homework";
+import { HOMEWORKS, Homework} from "../mock/homework";
+import {Credential} from '../mock/credential';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,14 @@ import {Homework, HOMEWORKS} from "../mock/homework";
 export class DatabaseService {
 
   constructor() { }
+
+  public setPassword(password){
+    Credential.PASSWORD = password;
+  }
+
+  public getPassword(){
+    return Credential.PASSWORD;
+  }
 
   public getAllSubjects(){
     return SUBJECTS;
@@ -25,6 +34,7 @@ export class DatabaseService {
   public getSubjectMark(id){
     return GRADES.filter(g => g.subjectRed == id);
   }
+
   public getAllAverage() {
     let sum = 0;
     for (let i = 0; i < SUBJECTS.length; i++) {
