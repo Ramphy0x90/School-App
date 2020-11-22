@@ -10,14 +10,12 @@
   background-color: #FABC2C;
 }
 
-.subject-media-label{
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: #FABC2C;
-}
-
 ion-list ion-item{
   --background: #6C7688 !important;
+}
+
+ion-list:not(:last-child){
+  border-bottom: 1px solid #455073 !important;
 }
 
 ion-list ion-item ion-label{

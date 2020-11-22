@@ -12,9 +12,9 @@
   </ion-card>
 
   <div *ngFor="let subject of subjects">
-    <a routerLink="/detail/{{subject.id}}">
+    <ion-label routerLink="/detail/{{subject.id}}">
       <app-subject-avg [average]="getAverage(subject.id)" [subject]="subject"></app-subject-avg>
-    </a>
+    </ion-label>
   </div>
 </ion-content>
 

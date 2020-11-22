@@ -13,7 +13,7 @@
 
     <ion-card mode="ios">
         <ion-list *ngFor="let grade of grades">
-            <ion-item>
+            <ion-item lines="none">
                 <ion-label>{{ grade.dayDate | date: 'dd.MM.yyyy' }} - {{ grade.mark }}</ion-label>
             </ion-item>
         </ion-list>
