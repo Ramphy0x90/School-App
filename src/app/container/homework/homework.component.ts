@@ -36,5 +36,6 @@ export class HomeworkComponent implements OnInit {
     });
 
     await modal.present();
+    this.newHomework = new Homework();
   }
 }

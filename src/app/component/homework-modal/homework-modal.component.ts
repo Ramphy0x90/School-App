@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Subject} from "../../mock/subject";
 import {DatabaseService} from "../../service/database.service";
-import {Homework} from "../../mock/homework";
+import {Homework} from '../../mock/homework';
 import {ModalController} from "@ionic/angular";
 
 @Component({
@@ -43,6 +43,5 @@ export class HomeworkModalComponent implements OnInit {
     this.modalController.dismiss({
       'dismissed': true
     });
-    this.homework = new Homework();
   }
 }
