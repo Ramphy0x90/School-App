@@ -16,8 +16,8 @@
   </ion-item>
   <ion-item>
     <ion-label>Materia</ion-label>
-    <ion-select value="subjects.id == selectedSubject.id">
-      <ion-select-option *ngFor="let subject of subjects" [(ngModel)]="selectedSubject" ngDefaultControl>
+    <ion-select [(ngModel)]="exist ? selectedSubject.id : homework.subjectRef">
+      <ion-select-option *ngFor="let subject of subjects" [value]="subject.id">
         {{ subject.name }}
       </ion-select-option>
     </ion-select>

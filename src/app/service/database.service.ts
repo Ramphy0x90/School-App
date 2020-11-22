@@ -64,7 +64,8 @@ export class DatabaseService {
   }
 
   public getHomeworks(){
-    return HOMEWORKS.filter(h => h.dayDate >= new Date())
+    //return HOMEWORKS.filter(h => h.dayDate >= new Date())
+    return HOMEWORKS;
   }
 
   public insertHomework(homework: Homework){
