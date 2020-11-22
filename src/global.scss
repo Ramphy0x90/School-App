@@ -37,8 +37,8 @@ ion-content, ion-tabs, ion-item, ion-label, ion-datetime{
   --background: #F1F0EE !important;
 }
 
-ion-content{
-  //--offset-bottom: -55px !important;
+ion-content:not(#login-content){
+  --offset-bottom: -55px !important;
 }
 
 ion-header, ion-title{
@@ -82,7 +82,7 @@ ion-card-title{
 
 .picker-toolbar.sc-ion-picker-ios {
   background: #F1F0EE !important;
-  border-bottom: 0px solid transparent;
+  border-bottom: 0 solid transparent;
   border-top: $fontColor !important;
   box-shadow: 0 0 0 0 #F1F0EE !important;
 }
