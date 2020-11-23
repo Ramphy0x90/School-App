@@ -19,6 +19,8 @@ export class HomeworkModalComponent implements OnInit {
 
   selectedSubject: Subject;
 
+  calculatedDate: string = '';
+
   subjects: Subject[];
 
   constructor(private databaseService: DatabaseService, private modalController: ModalController) { }
@@ -26,6 +28,11 @@ export class HomeworkModalComponent implements OnInit {
   ngOnInit() {
     this.subjects = this.databaseService.getAllSubjects();
     this.selectedSubject = this.databaseService.getSubject(this.homework.subjectRef);
+
+    this.calculatedDate =  this.homework.dayDate.getFullYear() + '-' +
+        this.homework.dayDate.getMonth() + '-' +
+        this.homework.dayDate.getDate();
+
     console.log(this.homework);
   }
 

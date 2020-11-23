@@ -12,7 +12,7 @@
   </ion-item>
   <ion-item>
     <ion-label>Data</ion-label>
-    <ion-datetime [(ngModel)]="homework.dayDate"></ion-datetime>
+    <ion-datetime [(ngModel)]="exist ? calculatedDate : homework.dayDate"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Materia</ion-label>
