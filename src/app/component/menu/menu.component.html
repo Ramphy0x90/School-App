@@ -1,4 +1,4 @@
-<ion-segment mode="ios" (ionChange)="test($event)">
+<ion-segment mode="ios" (ionChange)="goTO($event)">
     <ion-segment-button [routerLink]="tab.path" [value]="i" *ngFor="let tab of tabs; let i = index" [ngClass]="{'currentTab' : i == currentTab}">
         <ion-icon [name]="tab.icon"></ion-icon>
         <ion-label>{{tab.name}}</ion-label>

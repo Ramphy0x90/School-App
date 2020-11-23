@@ -4,3 +4,7 @@
   padding-right: 3%;
   font-size: 10pt;
 }
+
+ion-item:first-of-type, ion-textarea{
+  text-align: right;
+}

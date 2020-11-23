@@ -5,14 +5,14 @@
   </ion-title>
 </ion-header>
 
-<ion-content>
+<ion-content class="no-menu">
   <ion-item>
     <ion-label>Titolo</ion-label>
     <ion-input placeholder="Titolo" [(ngModel)]="homework.title"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Data</ion-label>
-    <ion-datetime [(ngModel)]="homework.dayDate"></ion-datetime>
+    <ion-datetime [(ngModel)]="exist ? calculatedDate : homework.dayDate"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Materia</ion-label>

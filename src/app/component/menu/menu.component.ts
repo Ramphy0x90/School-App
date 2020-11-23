@@ -29,8 +29,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {}
 
-  test(ev: any){
+  goTO(ev: any){
     this.currentTab = ev.detail.value;
-    console.log(ev.detail.value);
   }
 }

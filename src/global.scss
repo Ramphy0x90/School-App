@@ -37,7 +37,7 @@ ion-content, ion-tabs, ion-item, ion-label, ion-datetime{
   --background: #F1F0EE !important;
 }
 
-ion-content:not(#login-content){
+ion-content:not(.no-menu){
   --offset-bottom: -55px !important;
 }
 
