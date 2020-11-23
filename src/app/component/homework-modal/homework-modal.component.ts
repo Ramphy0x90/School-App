@@ -29,13 +29,11 @@ export class HomeworkModalComponent implements OnInit {
     this.subjects = this.databaseService.getAllSubjects();
     this.selectedSubject = this.databaseService.getSubject(this.homework.subjectRef);
 
-    this.calculatedDate =  this.homework.dayDate.getFullYear() + '-' +
-        this.homework.dayDate.getMonth() + '-' +
-        this.homework.dayDate.getDate();
-
-    console.log(this.homework);
+    let homeworkDate: Date = new Date(this.homework.dayDate)
+    this.calculatedDate =  homeworkDate.getFullYear() + '-' +
+          homeworkDate.getMonth() + '-' +
+          homeworkDate.getDate();
   }
-
 
   insertData(exist, homework){
     if (exist){
