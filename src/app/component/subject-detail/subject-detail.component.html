@@ -2,6 +2,7 @@
     <ion-title>
         <span (click)="goBack()"><ion-icon name="chevron-back-outline"></ion-icon>
             {{ subject.name | uppercase }}</span>
+        <ion-icon name="add-outline" (click)="presentModal()"></ion-icon>
     </ion-title>
 </ion-header>
 <ion-content>
@@ -18,23 +19,4 @@
             </ion-item>
         </ion-list>
     </ion-card>
-
-    <div>
-        <h5>Aggiungi una nuova nota
-            <ion-icon name="add-circle-outline"></ion-icon>
-        </h5>
-        <ion-item>
-            <ion-label position="floating">Nota</ion-label>
-            <ion-input [(ngModel)]="newGrade.mark"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Valore</ion-label>
-            <ion-input [(ngModel)]="newGrade.score"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Data</ion-label>
-            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newGrade.dayDate"></ion-datetime>
-        </ion-item>
-        <ion-button (click)="add()">Aggiungi</ion-button>
-    </div>
 </ion-content>

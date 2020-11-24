@@ -27,7 +27,12 @@ export class DatabaseService {
     let grades = GRADES.filter(g => g.subjectRed == id);
     let sum = 0;
     let test = 0;
-    grades.forEach(g => {sum += g.mark*g.score; test += g.score});
+    grades.forEach(g => {sum += g.mark*g.score; test += parseFloat(String(g.score))});
+
+
+    console.log("sfsdfdsfsfd");
+    console.log(grades);
+    console.log(test);
     return sum/test;
   }
 

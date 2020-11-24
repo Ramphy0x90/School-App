@@ -37,6 +37,11 @@ ion-content, ion-tabs, ion-item, ion-label, ion-datetime{
   --background: #F1F0EE !important;
 }
 
+ion-icon[name="add-outline"]{
+  font-size: 1.5em !important;
+  float: right !important;
+}
+
 ion-content:not(.no-menu){
   --offset-bottom: -55px !important;
 }
@@ -59,6 +64,13 @@ ion-title span, ion-title ion-icon{
 ion-card-title{
   color: #f1f0ee !important;
   font-size: 1.5em;
+}
+
+.header-link{
+  float: right;
+  color: white !important;
+  padding-right: 3%;
+  font-size: 10pt;
 }
 
 .picker-wrapper.sc-ion-picker-ios {

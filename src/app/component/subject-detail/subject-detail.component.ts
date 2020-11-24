@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Subject} from "../../mock/subject";
 import {DatabaseService} from "../../service/database.service";
 import {Grade} from "../../mock/grade";
+import {ModalController} from '@ionic/angular';
+import {GradesModalComponent} from '../grades-modal/grades-modal.component';
 
 @Component({
   selector: 'app-subject-detail',
@@ -16,7 +18,7 @@ export class SubjectDetailComponent implements OnInit {
   subject: Subject;
   grades: Grade[];
   newGrade: Grade = new Grade();
-  constructor(private router: Router, private route: ActivatedRoute, private databaseService: DatabaseService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private databaseService: DatabaseService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.getData();
@@ -26,10 +28,8 @@ export class SubjectDetailComponent implements OnInit {
     this.router.navigate(['/grades']);
   }
 
-  add(){
-    console.log(this.newGrade);
-    this.databaseService.insertGrade(this.newGrade);
-    this.getData();
+  add(grade){
+    this.databaseService.insertGrade(grade);
   }
 
   getData(){
@@ -40,5 +40,20 @@ export class SubjectDetailComponent implements OnInit {
       this.average = this.databaseService.getSubjectAverage(p.get('id'));
       this.class = this.average < 4 ? 'red' : this.average >=5 ? 'green' : 'yellow';
     });
+  }
+
+  public async presentModal() {
+    const modal = await this.modalController.create({
+      component: GradesModalComponent,
+      cssClass: 'modal',
+      componentProps: {
+        'grade': this.newGrade
+      },
+    });
+
+    await modal.present();
+    const { data } = await modal.onWillDismiss();
+    this.add(data.grade);
+    this.getData();
   }
 }
