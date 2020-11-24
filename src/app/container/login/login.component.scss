@@ -1,49 +1,45 @@
 $fontColor: #455073;
 $formWidth: 70%;
+$initMarginTop: 50px;
 
-.loginInput{
-  width: $formWidth;
-  max-width: 300px;
+.center{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#container ion-img{
+  transform: scale(1.2);
+}
+
+.loginInput, .loginButton{
+  width: $formWidth;
+  max-width: 300px;
+}
+
+.loginInput{
   -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
   -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
   border-radius: 60px;
   text-indent: 10px;
   font-size: 0.8em;
+  --background: #f1f0ee !important;
 }
 
 .loginButton{
-  width: $formWidth;
-  max-width: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 55px;
+  margin-top: $initMarginTop;
   --background: #3BB537;
   --border-radius: 60px;
 }
 
-.loginIcon{
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-  font-size: 40px;
-}
-
 #container ion-label{
-  position: absolute;
-  top: 64%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+  margin-top: $initMarginTop * 2;
 }
 
-#container ion-img{
-  transform: scale(1.2);
+.loginIcon{
+  margin-top: $initMarginTop * 3;
+  font-size: 40px;
 }

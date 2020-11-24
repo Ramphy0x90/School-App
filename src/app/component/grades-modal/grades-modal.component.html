@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-title>
+    Nuova nota
+    <ion-label class="header-link" (click)="dismiss()">Fine</ion-label>
+  </ion-title>
+</ion-header>
+
+<ion-content class="no-menu">
+  <ion-item>
+    <ion-label position="floating">Nota</ion-label>
+    <ion-input [(ngModel)]="grade.mark"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Valore</ion-label>
+    <ion-input [(ngModel)]="grade.score"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Data</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="grade.dayDate"></ion-datetime>
+  </ion-item>
+</ion-content>
