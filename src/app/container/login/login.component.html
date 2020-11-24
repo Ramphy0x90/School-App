@@ -1,11 +1,11 @@
 <ion-content class="no-menu">
     <div id="container">
         <ion-img src="../../assets/icon/icon.svg"></ion-img>
-        <ion-input [value]="passwordIn" (input)="passwordIn=$event.target.value" class="loginInput" placeholder="Password code" type="password"></ion-input>
-        <ion-button class="loginButton" (click)="buttonText == 'Login' ? checkPassword() : setPassword()">{{buttonText}}</ion-button>
-        <ion-label>
+        <ion-input [value]="passwordIn" (input)="passwordIn=$event.target.value" class="loginInput center" placeholder="Password code" type="password" inputmode="numeric"></ion-input>
+        <ion-button (click)="buttonText == 'Login' ? checkPassword() : setPassword()" class="loginButton center">{{buttonText}}</ion-button>
+        <ion-label class="center">
             Or
         </ion-label>
-        <ion-icon class="loginIcon" name="finger-print-outline"></ion-icon>
+        <ion-icon class="loginIcon center" name="finger-print-outline"></ion-icon>
     </div>
 </ion-content>
