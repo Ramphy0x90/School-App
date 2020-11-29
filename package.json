@@ -68,7 +68,8 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.5",
+    "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.1"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -83,7 +84,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-datepicker": {},
       "cordova-sqlite-storage": {},
-      "cordova-plugin-fingerprint-aio": {}
+      "cordova-plugin-fingerprint-aio": {},
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {}
     },
     "platforms": [
       "android",
