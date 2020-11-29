@@ -9,6 +9,8 @@ import {ToastController} from '@ionic/angular';
 import {Router} from '@angular/router';
 import {DatabaseService} from '../../service/database.service';
 
+import {SqliteDbService} from '../../service/sqlite-db.service';
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
     public buttonText: string = 'Login';
     public passwordIn: number | string;
 
-    constructor(private router: Router, private databaseService: DatabaseService) {
+    constructor(private router: Router, private databaseService: DatabaseService, private database: SqliteDbService) {
         new FingerprintComponent(new FingerprintAIO());
 
         if (!this.checkPasswordExists()) {
@@ -49,8 +51,7 @@ export class LoginComponent implements OnInit {
     checkPassword() {
         if (this.databaseService.getPassword() == this.passwordIn) {
             new AlertComponent(this.toastCtrl, 'success', 'Welcome to SchoolApp');
-            this.router.navigate(['/grades']).then(r => {
-            });
+            this.router.navigate(['/grades']).then(r => {});
         } else {
             new AlertComponent(this.toastCtrl, 'danger', "Wrong password");
         }

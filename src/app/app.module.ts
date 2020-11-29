@@ -14,13 +14,19 @@ import {CommonModule} from "@angular/common";
 import {HomeworkModule} from "./container/homework/homework.module";
 import {SubjectModule} from './container/subject/subject.module';
 
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule, SubjectModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule, SubjectModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
+    SQLitePorter,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent]
