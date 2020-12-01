@@ -29,12 +29,13 @@ export class SqliteDbService {
         return this.isDbReady.getValue();
     }
 
-    createDb() {
+    createDb(){
         this.sqlite.create({name: 'data.db', location: 'default'})
             .then((db: SQLiteObject) => {
                 this.sqliteObj = db;
                 this.populateDb(this.sqliteObj);
-            }).catch(e => {
+            })
+            .catch(e => {
             console.log(e);
         });
     }
