@@ -29,11 +29,7 @@ export class DatabaseService {
     let test = 0;
     grades.forEach(g => {sum += g.mark*g.score; test += parseFloat(String(g.score))});
 
-
-    console.log("sfsdfdsfsfd");
-    console.log(grades);
-    console.log(test);
-    return sum/test;
+    return test !== 0 ? sum/test : 0;
   }
 
   public getSubjectMark(id){
@@ -42,16 +38,22 @@ export class DatabaseService {
 
   public getAllAverage() {
     let sum = 0;
+    let subjectsInSum = 0;
+
     for (let i = 0; i < SUBJECTS.length; i++) {
-      sum += this.getSubjectAverage(SUBJECTS[i].id);
+      let subjectAverage = this.getSubjectAverage(SUBJECTS[i].id);
+
+      if(subjectAverage > 0) {
+        subjectsInSum++;
+        sum += subjectAverage;
+      }
     }
 
-    return sum/SUBJECTS.length;
+    return sum/subjectsInSum;
   }
 
   public insertSubject(subject: Subject){
     subject.id = SUBJECTS.length > 0 ? SUBJECTS[SUBJECTS.length-1].id + 1 : 0;
-    console.log(subject);
     SUBJECTS.push(subject);
   }
 
