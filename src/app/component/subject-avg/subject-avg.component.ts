@@ -23,6 +23,7 @@ export class SubjectAvgComponent implements OnInit, OnChanges {
     if (changes.average){
       if (this.average >= 5) this.color = 'green';
       else if (this.average >= 4) this.color = 'yellow';
+      else if(this.average == 0) this.color = 'gray';
       else this.color = 'red';
     }
   }

@@ -31,7 +31,9 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        console.log(this.database.getDbStatus());
+    }
 
     checkPasswordExists() {
         return !!this.databaseService.getPassword();

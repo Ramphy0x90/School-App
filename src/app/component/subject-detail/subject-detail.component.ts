@@ -38,7 +38,11 @@ export class SubjectDetailComponent implements OnInit {
       this.grades = this.databaseService.getSubjectMark(p.get('id'));
       this.newGrade.subjectRed = Number(p.get('id'));
       this.average = this.databaseService.getSubjectAverage(p.get('id'));
-      this.class = this.average < 4 ? 'red' : this.average >=5 ? 'green' : 'yellow';
+
+      if (this.average >= 5) this.class = 'green';
+      else if (this.average >= 4) this.class = 'yellow';
+      else if(this.average == 0) this.class = 'gray';
+      else this.class = 'red';
     });
   }
 
