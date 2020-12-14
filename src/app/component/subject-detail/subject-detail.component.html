@@ -8,7 +8,7 @@
 <ion-content>
     <ion-card mode="ios" class="{{ class }}">
         <ion-card-header>
-            <ion-card-title>Media: {{ average.toFixed(2) }}</ion-card-title>
+            <ion-card-title>Media: {{ average.toFixed(2) == 0 ? '-' : average.toFixed(2) }}</ion-card-title>
         </ion-card-header>
     </ion-card>
 

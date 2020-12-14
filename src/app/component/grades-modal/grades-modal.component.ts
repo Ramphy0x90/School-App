@@ -13,12 +13,22 @@ export class GradesModalComponent implements OnInit {
   @Input() grade: Grade = new Grade();
   constructor(private route: ActivatedRoute, private modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.grade = new Grade();
+  }
 
   dismiss(){
     this.modalController.dismiss({
       'dismissed': true,
-      'grade': this.grade
+      'grade': this.grade,
+      'saveOnClose': true
+    });
+  }
+
+  closeModal(){
+    this.modalController.dismiss({
+      'dismissed': true,
+      'saveOnClose': false
     });
   }
 }
