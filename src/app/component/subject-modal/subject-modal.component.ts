@@ -28,7 +28,11 @@ export class SubjectModalComponent implements OnInit {
     this.modalController.dismiss({
       'dismissed': true
     });
+  }
 
-    console.log(this.databaseService.getAllSubjects())
+  closeModal(){
+    this.modalController.dismiss({
+      'dismissed': true,
+    });
   }
 }

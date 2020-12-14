@@ -49,4 +49,10 @@ export class HomeworkModalComponent implements OnInit {
       'dismissed': true
     });
   }
+
+  closeModal(){
+    this.modalController.dismiss({
+      'dismissed': true,
+    });
+  }
 }

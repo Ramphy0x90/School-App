@@ -18,6 +18,8 @@ export class SubjectDetailComponent implements OnInit {
   subject: Subject;
   grades: Grade[];
   newGrade: Grade = new Grade();
+  saveOnClose: boolean;
+
   constructor(private router: Router, private route: ActivatedRoute, private databaseService: DatabaseService, private modalController: ModalController) { }
 
   ngOnInit() {
@@ -51,13 +53,15 @@ export class SubjectDetailComponent implements OnInit {
       component: GradesModalComponent,
       cssClass: 'modal',
       componentProps: {
-        'grade': this.newGrade
+        'grade': this.newGrade,
+        'saveOnClose': this.saveOnClose
       },
     });
 
     await modal.present();
     const { data } = await modal.onWillDismiss();
-    this.add(data.grade);
+
+    if(data.saveOnClose) this.add(data.grade);
     this.getData();
   }
 }
