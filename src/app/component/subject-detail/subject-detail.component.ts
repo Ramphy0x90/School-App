@@ -63,5 +63,7 @@ export class SubjectDetailComponent implements OnInit {
 
     if(data.saveOnClose) this.add(data.grade);
     this.getData();
+
+    this.newGrade = new Grade();
   }
 }
