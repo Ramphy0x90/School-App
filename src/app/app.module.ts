@@ -17,10 +17,9 @@ import {SubjectModule} from './container/subject/subject.module';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
-import { AvgFormatPipe } from './pipes/avg-format.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, AvgFormatPipe],
+  declarations: [AppComponent, MenuComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GradesModule, FormsModule, LoginModule, CommonModule, HomeworkModule, SubjectModule, HttpClientModule],
   providers: [
