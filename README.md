@@ -7,7 +7,8 @@ Final project M335
 ```bash
 npm install -g @ionic/cli
 npm install -g cordova
-npm install @ionic/angular-toolkit@latest
+npm install -g native-run
+npm installl @ionic/angular-toolkit@latest
 ```
 
 ## Components
