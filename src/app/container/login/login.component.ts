@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 import {DatabaseService} from '../../service/database.service';
 
 import {SqliteDbService} from '../../service/sqlite-db.service';
+import {SQLiteObject} from '@ionic-native/sqlite';
 
 @Component({
     selector: 'app-login',
@@ -31,9 +32,7 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    ngOnInit() {
-        console.log(this.database.getDbStatus());
-    }
+    ngOnInit() {}
 
     checkPasswordExists() {
         return !!this.databaseService.getPassword();
@@ -42,6 +41,9 @@ export class LoginComponent implements OnInit {
     setPassword() {
         if (!!this.passwordIn) {
             this.databaseService.setPassword(this.passwordIn);
+
+            this.database.setPassword((this.passwordIn).toString()).then();
+
             new AlertComponent(this.toastCtrl, 'success', 'Password created');
             this.buttonText = 'Login';
             this.passwordIn = '';
