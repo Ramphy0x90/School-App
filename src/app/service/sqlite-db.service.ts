@@ -9,7 +9,6 @@ import {SQLitePorter} from '@ionic-native/sqlite-porter/ngx';
 
 export class SqliteDbService {
     public dbObj;
-    public tmpNumRows;
 
     constructor(
         private sqlite: SQLite,
@@ -38,36 +37,31 @@ export class SqliteDbService {
         });
     }
 
-    getNumRows(tableName: String){
-        this.dbObj.executeSql(`SELECT COUNT(*) AS count FROM ${tableName}`, [])
+    getNumRows(tableName: string){
+        return this.dbObj.executeSql(`SELECT COUNT(*) AS count FROM ${tableName}`, [])
             .then(res => {
-                this.tmpNumRows = res.rows.item(0).count;
-                console.log("AUASID");
-                console.log(this.tmpNumRows);
+                return res.rows.item(0).count;
             })
             .catch(errorLastId => console.log(errorLastId));
-
-        console.log(this.tmpNumRows)
     }
 
-    getLastId(tableName: String): number{
-        let lastId: number;
-
-        this.dbObj.executeSql(`SELECT MAX(id) FROM ${tableName}`, [])
+    getLastId(tableName: string){
+        return this.dbObj.executeSql(`SELECT MAX(id) AS max FROM ${tableName}`, [])
             .then(res => {
-                lastId = res.rows.item(0).id;
+                return res.rows.item(0).max;
             })
             .catch(errorLastId => console.log(errorLastId));
-
-        return lastId;
     }
 
-    public setPassword(password: String){
-        if(this.tmpNumRows == 0){
+    public async setPassword(password: string){
+        let numRows = await this.getNumRows('credentials');
+
+        if(numRows == 0){
             this.dbObj.executeSql('INSERT INTO credentials(password) VALUES(?)', [password]);
         }else{
-            let id = this.getLastId('credentials');
+            let id = await this.getLastId('credentials');
             this.dbObj.executeSql('UPDATE credentials SET password = ? WHERE id = ?', [password, id]);
+            this.getAll();
         }
 
     }
